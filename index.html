@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xitique Moz – Onde tu recebes primeiro!!!</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-b from-emerald-100 to-white min-h-screen font-sans">
+
+  <header class="bg-emerald-600 text-white p-4 text-center shadow-md">
+    <h1 class="text-3xl font-bold flex items-center justify-center gap-2">
+      💸 Xitique Moz
+    </h1>
+    <p class="italic">Onde tu recebes primeiro!!!</p>
+  </header>
+
+  <main class="max-w-xl mx-auto bg-white shadow-lg rounded-2xl p-6 mt-6">
+    <!-- Formulário de Inscrição -->
+    <section id="formSection">
+      <h2 class="text-2xl font-semibold mb-4 text-emerald-700">Formulário de Inscrição</h2>
+      <form id="inscricaoForm" class="space-y-3">
+        <input type="text" id="nome" placeholder="Nome Completo" class="w-full border rounded-lg p-2" required />
+        <select id="provincia" class="w-full border rounded-lg p-2" required>
+          <option value="">Selecione a Província</option>
+          <option>Tete</option><option>Maputo</option><option>Sofala</option><option>Nampula</option>
+          <option>Zambézia</option><option>Cabo Delgado</option><option>Manica</option>
+          <option>Niassa</option><option>Gaza</option><option>Inhambane</option>
+        </select>
+        <input type="tel" id="telefone" placeholder="Número de Telefone" class="w-full border rounded-lg p-2" required />
+        <input type="text" id="profissao" placeholder="Profissão" class="w-full border rounded-lg p-2" />
+        <div class="flex gap-4">
+          <label><input type="radio" name="emprego" value="Público" required /> Público</label>
+          <label><input type="radio" name="emprego" value="Privado" required /> Privado</label>
+        </div>
+        <input type="number" id="nuit" placeholder="Número de NUIT" class="w-full border rounded-lg p-2" />
+        <div>
+          <p class="text-sm font-medium text-gray-700">Upload do B.I. (Frente e Verso)</p>
+          <input type="file" id="biFrente" class="w-full border rounded-lg p-2 mt-1" accept="image/*,.pdf" required />
+          <input type="file" id="biVerso" class="w-full border rounded-lg p-2 mt-1" accept="image/*,.pdf" required />
+        </div>
+        <label class="flex items-center gap-2 text-sm">
+          <input type="checkbox" id="termos" required /> Aceito os Termos e Condições
+        </label>
+        <button type="submit" class="btn-principal">Avançar para Simulação</button>
+      </form>
+    </section>
+
+    <!-- Simulação -->
+    <section id="simulacaoSection" class="hidden">
+      <h2 class="text-2xl font-semibold mb-4 text-emerald-700">Simulação do Xitique</h2>
+      <form id="simulacaoForm" class="space-y-3">
+        <input type="number" id="valorXitique" placeholder="Valor do Xitique (MZN)" class="w-full border rounded-lg p-2" required />
+        <input type="number" id="participantes" placeholder="Número de Participantes" class="w-full border rounded-lg p-2" required />
+        <label class="flex items-center gap-2">
+          <input type="checkbox" id="primeiroReceber" /> Quero ser o primeiro a receber
+        </label>
+
+        <div id="taxaSection" class="hidden bg-emerald-50 border border-emerald-300 rounded-lg p-3">
+          <p id="mensagemTaxa" class="text-emerald-700 font-medium"></p>
+          <div class="mt-3 flex flex-col gap-2">
+            <button type="button" id="btnMpesa" class="btn-mpesa">Pagar com M-Pesa</button>
+            <button type="button" id="btnEmola" class="btn-emola">Pagar com e-Mola</button>
+            <button type="button" id="btnMkesh" class="btn-mkesh">Pagar com mKesh</button>
+          </div>
+          <div class="mt-3">
+            <label class="text-sm font-medium">Upload do comprovativo de pagamento</label>
+            <input type="file" id="comprovativo" class="w-full border rounded-lg p-2 mt-1" accept="image/*,.pdf" required />
+          </div>
+        </div>
+
+        <button type="submit" class="btn-principal mt-2">Finalizar Inscrição</button>
+      </form>
+    </section>
+
+    <!-- Confirmação -->
+    <section id="confirmacaoSection" class="hidden text-center">
+      <div class="bg-emerald-100 border border-emerald-400 rounded-2xl p-6">
+        <h2 class="text-2xl font-bold text-emerald-700 mb-2">✅ Inscrição Confirmada!</h2>
+        <p id="resumoInscricao" class="text-gray-800"></p>
+        <button onclick="location.reload()" class="btn-principal mt-4">Voltar ao início</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 mt-6 pb-4">
+    © 2025 Xitique Moz 
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
